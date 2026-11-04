@@ -1118,6 +1118,12 @@ Outputs with case- or Unicode-equivalent file or directory names are skipped
 before copying, and aliases of existing local paths are rejected, preserving
 previous complete copies.
 
+The optional [Maritime cloud sandbox provider](backend/packages/harness/deerflow/community/maritime/README.md)
+(`pip install "deerflow-harness[maritime]"`) keeps one named Maritime sandbox per
+user and thread, so a thread gets the same machine across turns and Gateway
+restarts. Released sandboxes are paused by Maritime after `idle_timeout` and
+resumed by the next command or file call.
+
 The [sandbox benchmark](backend/scripts/benchmark/sandbox/README.md#opensandbox)
 also supports OpenSandbox cold acquisition, warm reuse and concurrent scopes,
 using the configured service connection and reporting unconfirmed cleanup as a

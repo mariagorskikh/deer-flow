@@ -1983,6 +1983,23 @@ sandbox:
 #   # environment:                    # create-time and per-command defaults
 #   #   PYTHONUNBUFFERED: "1"
 
+# Option 7: Maritime cloud Sandbox
+# Runs each sandbox as a Maritime cloud sandbox, one per user and thread, reused
+# by name across turns and Gateway restarts. Released sandboxes are paused by
+# Maritime after idle_timeout and resumed on the next call. Requires the
+# optional SDK: pip install "deerflow-harness[maritime]".
+# sandbox:
+#   use: deerflow.community.maritime:MaritimeSandboxProvider
+#   # api_key: $MARITIME_API_KEY       # falls back to the MARITIME_API_KEY env var
+#   # base_url: https://api.maritime.sh  # optional; MARITIME_API_URL or the SDK default when omitted
+#   # template: base                   # stock template, saved snapshot name, or public OCI image
+#   # size: small                      # small | medium | large | xlarge
+#   # idle_timeout: 300                # idle seconds before Maritime pauses (or ends) it; 60 to 86400
+#   # on_idle: pause                   # pause keeps state; kill ends the sandbox
+#   # for_end_user: true               # keep Maritime account secrets out of the sandbox
+#   # environment:                     # injected into every command (and set at create time)
+#   #   PYTHONUNBUFFERED: "1"
+
 # ============================================================================
 # Subagents Configuration
 # ============================================================================
